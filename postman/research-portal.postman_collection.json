@@ -1,0 +1,132 @@
+{
+  "info": {
+    "_postman_id": "research-portal-collection",
+    "name": "Research Opportunity Portal",
+    "description": "API test collection for the University Research Opportunity Portal — CN BS(CS 5A) Assignment #01",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. Create Opportunity #1",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"AI in Healthcare\",\n  \"description\": \"Researching AI applications in medical diagnosis and patient care optimization.\",\n  \"research_area\": \"Artificial Intelligence\",\n  \"faculty_name\": \"Dr. Ahmed Khan\",\n  \"department\": \"Computer Science\",\n  \"required_skills\": \"Python, Machine Learning, PyTorch\",\n  \"available_positions\": 3,\n  \"application_deadline\": \"2027-06-30\"\n}"
+        },
+        "url": { "raw": "http://localhost:3000/api/opportunities", "host": ["http://localhost:3000"], "path": ["api", "opportunities"] }
+      },
+      "response": []
+    },
+    {
+      "name": "2. Create Opportunity #2",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Quantum Networking Protocols\",\n  \"description\": \"Developing next-generation protocols for quantum communication networks.\",\n  \"research_area\": \"Networks\",\n  \"faculty_name\": \"Dr. Sara Ali\",\n  \"department\": \"Electrical Engineering\",\n  \"required_skills\": \"Quantum Computing, C++, Linear Algebra\",\n  \"available_positions\": 2,\n  \"application_deadline\": \"2027-05-15\"\n}"
+        },
+        "url": { "raw": "http://localhost:3000/api/opportunities", "host": ["http://localhost:3000"], "path": ["api", "opportunities"] }
+      },
+      "response": []
+    },
+    {
+      "name": "3. Create Opportunity #3",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Cybersecurity Threat Analysis\",\n  \"description\": \"Analyzing emerging cybersecurity threats and developing mitigation strategies.\",\n  \"research_area\": \"Cybersecurity\",\n  \"faculty_name\": \"Dr. Usman Tariq\",\n  \"department\": \"Information Technology\",\n  \"required_skills\": \"Network Security, Wireshark, Python\",\n  \"available_positions\": 4,\n  \"application_deadline\": \"2027-07-01\"\n}"
+        },
+        "url": { "raw": "http://localhost:3000/api/opportunities", "host": ["http://localhost:3000"], "path": ["api", "opportunities"] }
+      },
+      "response": []
+    },
+    {
+      "name": "4. Get All Opportunities",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "http://localhost:3000/api/opportunities", "host": ["http://localhost:3000"], "path": ["api", "opportunities"] }
+      },
+      "response": []
+    },
+    {
+      "name": "5. Get One Opportunity by ID",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "http://localhost:3000/api/opportunities/1", "host": ["http://localhost:3000"], "path": ["api", "opportunities", "1"] }
+      },
+      "response": []
+    },
+    {
+      "name": "6. Update an Opportunity",
+      "request": {
+        "method": "PUT",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"AI in Healthcare (Updated)\",\n  \"description\": \"Expanded research scope to include drug discovery and genomics.\",\n  \"research_area\": \"Artificial Intelligence\",\n  \"faculty_name\": \"Dr. Ahmed Khan\",\n  \"department\": \"Computer Science\",\n  \"required_skills\": \"Python, Machine Learning, PyTorch, Genomics\",\n  \"available_positions\": 5,\n  \"application_deadline\": \"2027-08-15\"\n}"
+        },
+        "url": { "raw": "http://localhost:3000/api/opportunities/1", "host": ["http://localhost:3000"], "path": ["api", "opportunities", "1"] }
+      },
+      "response": []
+    },
+    {
+      "name": "7. Change Status Open → Closed",
+      "request": {
+        "method": "PUT",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"status\": \"Closed\"\n}"
+        },
+        "url": { "raw": "http://localhost:3000/api/opportunities/2", "host": ["http://localhost:3000"], "path": ["api", "opportunities", "2"] }
+      },
+      "response": []
+    },
+    {
+      "name": "8. Delete an Opportunity",
+      "request": {
+        "method": "DELETE",
+        "url": { "raw": "http://localhost:3000/api/opportunities/3", "host": ["http://localhost:3000"], "path": ["api", "opportunities", "3"] }
+      },
+      "response": []
+    },
+    {
+      "name": "9. Get Deleted Opportunity (expect 404)",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "http://localhost:3000/api/opportunities/3", "host": ["http://localhost:3000"], "path": ["api", "opportunities", "3"] }
+      },
+      "response": []
+    },
+    {
+      "name": "10. Create with Missing Fields (expect 400)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"description\": \"Missing all required fields\"\n}"
+        },
+        "url": { "raw": "http://localhost:3000/api/opportunities", "host": ["http://localhost:3000"], "path": ["api", "opportunities"] }
+      },
+      "response": []
+    }
+  ]
+}
