@@ -1,0 +1,19 @@
+$kind: http-request
+url: http://localhost:3000/api/opportunities/1
+method: PUT
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "title": "AI in Healthcare (Updated)",
+      "description": "Expanded research scope to include drug discovery and genomics.",
+      "research_area": "Artificial Intelligence",
+      "faculty_name": "Dr. Ahmed Khan",
+      "department": "Computer Science",
+      "required_skills": "Python, Machine Learning, PyTorch, Genomics",
+      "available_positions": 5,
+      "application_deadline": "2027-08-15"
+    }
+order: 6000

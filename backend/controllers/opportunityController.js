@@ -71,21 +71,32 @@ const updateOpportunity = async (req, res) => {
              return res.status(404).json({ error: 'Opportunity not found' });
         }
         
-        const validationError = validateOpportunity(req.body);
+        // Merge existing data with incoming partial body so partial updates work
+        const merged = {
+            title: req.body.title ?? existing.title,
+            description: req.body.description ?? existing.description,
+            research_area: req.body.research_area ?? existing.research_area,
+            faculty_name: req.body.faculty_name ?? existing.faculty_name,
+            department: req.body.department ?? existing.department,
+            required_skills: req.body.required_skills ?? existing.required_skills,
+            available_positions: req.body.available_positions ?? existing.available_positions,
+            application_deadline: req.body.application_deadline ?? existing.application_deadline,
+            status: req.body.status ?? existing.status
+        };
+        
+        const validationError = validateOpportunity(merged);
         if (validationError) {
             return res.status(400).json({ error: validationError });
         }
         
-        const affectedRows = await Opportunity.update(id, {
-             ...req.body,
-             status: req.body.status || existing.status
-        });
+        const affectedRows = await Opportunity.update(id, merged);
         
         if (affectedRows === 0) {
              return res.status(404).json({ error: 'Opportunity not found' });
         }
         
-        res.status(200).json({ id, ...req.body });
+        const updated = await Opportunity.getById(id);
+        res.status(200).json(updated);
     } catch (err) {
         console.error(err);
         res.status(500).json({ error: 'Failed to update opportunity' });

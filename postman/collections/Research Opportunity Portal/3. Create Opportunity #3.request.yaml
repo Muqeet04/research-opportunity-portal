@@ -1,0 +1,19 @@
+$kind: http-request
+url: http://localhost:3000/api/opportunities
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "title": "Cybersecurity Threat Analysis",
+      "description": "Analyzing emerging cybersecurity threats and developing mitigation strategies.",
+      "research_area": "Cybersecurity",
+      "faculty_name": "Dr. Usman Tariq",
+      "department": "Information Technology",
+      "required_skills": "Network Security, Wireshark, Python",
+      "available_positions": 4,
+      "application_deadline": "2027-07-01"
+    }
+order: 3000
