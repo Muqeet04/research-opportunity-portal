@@ -1,5 +1,7 @@
 # University Research Opportunity Portal
 
+**Muqeet Mahmood** | BCS-5A | 24P-0606
+
 A full-stack web application for managing university research opportunities. Built with **Node.js + Express** backend, **MySQL** database, and a **Bootstrap 5** single-page frontend.
 
 **Assignment:** CN — BS(CS 5A) — Assignment #01
