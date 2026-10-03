@@ -1,0 +1,12 @@
+$kind: http-request
+url: http://localhost:3000/api/opportunities
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "description": "Missing all required fields"
+    }
+order: 10000

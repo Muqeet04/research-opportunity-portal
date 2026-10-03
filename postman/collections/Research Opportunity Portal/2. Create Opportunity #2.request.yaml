@@ -1,0 +1,19 @@
+$kind: http-request
+url: http://localhost:3000/api/opportunities
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "title": "Quantum Networking Protocols",
+      "description": "Developing next-generation protocols for quantum communication networks.",
+      "research_area": "Networks",
+      "faculty_name": "Dr. Sara Ali",
+      "department": "Electrical Engineering",
+      "required_skills": "Quantum Computing, C++, Linear Algebra",
+      "available_positions": 2,
+      "application_deadline": "2027-05-15"
+    }
+order: 2000
